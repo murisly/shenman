@@ -9,7 +9,7 @@
 namespace app\models;
 
 use Yii;
-use Yii\base\Model;
+use yii\base\Model;
 
 class EntryForm extends Model
 {
