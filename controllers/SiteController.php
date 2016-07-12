@@ -105,6 +105,5 @@ class SiteController extends Controller
         } else {
             return $this->render('entry', ['model' => $model]);
         }
-
     }
 }
