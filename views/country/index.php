@@ -1,24 +1,31 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: macalyou
- * Date: 2016/7/12
- * Time: 23:24
- */
 
 use yii\helpers\Html;
-use yii\widgets\LinkPager;
+use yii\grid\GridView;
 
+/* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Countries';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="country-index">
 
-<h1>Countries</h1>
-<ul>
-    <?php foreach ($countries as $country): ?>
-        <li>
-            <?= Html::encode("{$country->name} ({$country->code})") ?>:
-            <?= $country->population ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
+    <h1><?= Html::encode($this->title) ?></h1>
 
-<?= LinkPager::widget(['pagination' => $pagination]) ?>
+    <p>
+        <?= Html::a('Create Country', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'code',
+            'name',
+            'population',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+</div>
