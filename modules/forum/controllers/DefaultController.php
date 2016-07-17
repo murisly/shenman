@@ -15,6 +15,16 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+            "path" => \Yii::$app->basePath."/test.txt",
+        ]);
+    }
+
+    public function actionForumInfo(){
+        return $this->render("forumInfo");
+    }
+
+    public function actionDownload() {
+        return \Yii::$app->response->sendFile(\Yii::$app->basePath."/test.txt");
     }
 }
