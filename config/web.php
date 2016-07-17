@@ -47,6 +47,12 @@ $config = [
         ],
         */
     ],
+    'modules' => [
+        'forum' => [
+            'class' => 'app\modules\forum\Module',
+            // ... 模块其他配置 ...
+        ],
+    ],
     'params' => $params,
 ];
 

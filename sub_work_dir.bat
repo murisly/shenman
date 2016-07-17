@@ -1,1 +1,1 @@
-subst W: "bank"
+subst W: "shenman"
