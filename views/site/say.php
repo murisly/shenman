@@ -10,4 +10,5 @@ use yii\helpers\Html;
 
 ?>
 
-<?= Html::encode($message) ?>
+<?= Html::encode($message) ?></br>
+<?= Html::encode($test) ?>

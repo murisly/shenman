@@ -94,7 +94,12 @@ class SiteController extends Controller
     }
 
     public function actionSay($message = 'hello!') {
-        return $this->render('say', ['message' => $message]);
+        $message = Yii::$app->request->bodyParams;
+        $test = Yii::$app->session;
+        return $this->render('say', [
+            'message' => json_encode($message),
+            'test' => json_encode($test),
+        ]);
     }
 
     public function actionEntry() {
@@ -105,5 +110,9 @@ class SiteController extends Controller
         } else {
             return $this->render('entry', ['model' => $model]);
         }
+    }
+
+    public function actionShow() {
+        return "show";
     }
 }
