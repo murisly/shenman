@@ -2,6 +2,7 @@
 
 namespace app\modules\forum\controllers;
 
+use simple_html_dom;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 
@@ -37,10 +38,16 @@ class DefaultController extends Controller
     }
 
     public function actionForumInfo(){
+        $html = new simple_html_dom();
+        $html->load_file('http://www.baidu.com');
         return $this->render("forumInfo");
     }
 
     public function actionDownload() {
         return \Yii::$app->response->sendFile(\Yii::$app->basePath."/test.txt");
+    }
+
+    public function actionSmarty() {
+        return $this->render('test.tpl', ['username' => 'Alex']);
     }
 }
