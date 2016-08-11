@@ -56,7 +56,9 @@ $config = [
     'modules' => [
         'forum' => [
             'class' => 'app\modules\forum\Module',
-            // ... 模块其他配置 ...
+        ],
+        'zhihu' => [
+            'class' => 'app\modules\zhihu\Module',
         ],
     ],
     'params' => $params,
