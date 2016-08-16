@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\common\helper\SetTest;
+use app\models\Country;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -121,20 +122,22 @@ class SiteController extends Controller
     public function actionEntryTest() {
         $model = new EntryForm(['scenario' => 'register']);
         $model['name'] = "jam";
-        $model['password'] = "jam";
+        $model['password'] = "123";
 
+        return json_encode($model->attributes);
 
         if ($model->validate()) {
-            return Yii::getVersion();
+            return 'success';
         } else {
-            return "test";
+            return json_encode($model->errors);
         }
 
-//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-//            return "success";
-//        } else {
-//            return Yii::getVersion();
-//        }
+        // 快赋值
+        //$model = new EntryForm();
+        //$model = Yii::$app->request->post("EntryForm");
+
+        // 返回所有属性
+        // return json_encode($model->attributes);
     }
 
     public function actionSettest() {
@@ -142,5 +145,16 @@ class SiteController extends Controller
         $test->param2 = 3;
 
         return $test->param2;
+    }
+
+    public function actionCountry() {
+        $item = new Country();
+        $item->loadDefaultValues();
+
+        $item->population = 5000;
+        $item->name = 'japan';
+        $item->save();
+
+        return $item->population;
     }
 }
