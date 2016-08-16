@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\common\helper\SetTest;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -114,5 +115,32 @@ class SiteController extends Controller
 
     public function actionShow() {
         return "show";
+    }
+
+
+    public function actionEntryTest() {
+        $model = new EntryForm(['scenario' => 'register']);
+        $model['name'] = "jam";
+        $model['password'] = "jam";
+
+
+        if ($model->validate()) {
+            return Yii::getVersion();
+        } else {
+            return "test";
+        }
+
+//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+//            return "success";
+//        } else {
+//            return Yii::getVersion();
+//        }
+    }
+
+    public function actionSettest() {
+        $test = new SetTest();
+        $test->param2 = 3;
+
+        return $test->param2;
     }
 }

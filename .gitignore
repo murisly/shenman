@@ -35,17 +35,17 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# 模板编译文件
-webapps/www/views_c
+# 妯℃澘鏂囦欢
+web/templates_c
 
-# 不知道啥产生的文件，真讨嫌。
+# 锟斤拷知锟斤拷啥锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟接★拷
 core.*
 webapps/www/library/phpqrcode/cache
 
 composer.lock
 
-#忽略node_modules
+#锟斤拷锟斤拷node_modules
 node_modules
 
-#忽略js编译目录
+#锟斤拷锟斤拷js锟斤拷锟斤拷目录
 build

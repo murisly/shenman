@@ -32,7 +32,7 @@ AppAsset::register($this);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand">风华</a>
+        <a href="#" class="navbar-brand">台风1</a>
     </div>
     <div class="collapse navbar-collapse" id="1">
         <ul class="nav navbar-nav">
