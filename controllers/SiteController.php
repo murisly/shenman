@@ -161,4 +161,8 @@ class SiteController extends Controller
     public function actionImage() {
         return $this->renderPartial("image.html");
     }
+
+    public function actionLink() {
+        return $this->renderPartial("link.html");
+    }
 }
