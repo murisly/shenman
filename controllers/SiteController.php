@@ -157,4 +157,8 @@ class SiteController extends Controller
 
         return $item->population;
     }
+
+    public function actionImage() {
+        return $this->renderPartial("image.html");
+    }
 }
